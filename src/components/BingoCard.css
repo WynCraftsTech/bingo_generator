@@ -1,0 +1,184 @@
+.bingo-card {
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.bingo-card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Card theme indicator at the top */
+.card-theme-indicator {
+  padding: 15px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+
+.theme-text {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.bingo-header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+}
+
+.header-cell {
+  padding: 20px;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.header-cell:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.bingo-body {
+  background: white;
+}
+
+.bingo-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+}
+
+.bingo-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  border: 2px solid #ddd;
+  background: white;
+  transition: all 0.2s ease;
+  padding: 10px;
+}
+
+.bingo-cell:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #f9f9f9;
+}
+
+.free-cell {
+  background: #000000 !important;
+  color: white;
+  font-weight: 900;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+}
+
+/* Print styles */
+@media print {
+  .bingo-card {
+    max-width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    page-break-inside: avoid;
+  }
+
+  .bingo-card:hover {
+    box-shadow: none;
+    transform: none;
+  }
+
+  .card-theme-indicator {
+    padding: 10px;
+    font-size: 1rem;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .header-cell {
+    padding: 15px;
+    font-size: 2rem;
+    border: 1px solid #333;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .header-cell:hover {
+    transform: none;
+  }
+
+  .bingo-cell {
+    font-size: 1.5rem;
+    border-width: 2px;
+  }
+
+  .bingo-cell:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .free-cell {
+    font-size: 1.2rem;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .bingo-card {
+    max-width: 100%;
+    margin: 0 10px;
+  }
+
+  .card-theme-indicator {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .header-cell {
+    padding: 15px;
+    font-size: 2rem;
+  }
+
+  .bingo-cell {
+    font-size: 1.5rem;
+  }
+
+  .free-cell {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-theme-indicator {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .header-cell {
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+
+  .bingo-cell {
+    font-size: 1.2rem;
+  }
+
+  .free-cell {
+    font-size: 1rem;
+  }
+}
